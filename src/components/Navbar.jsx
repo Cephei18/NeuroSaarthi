@@ -8,12 +8,10 @@ const Navbar = () => {
       <div className="logo">NeuroSaarthi</div> {/* App Name */}
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        {/* <li><Link to="/dyslexia">Dyslexia</Link></li>
-        <li><Link to="/adhd">ADHD</Link></li>
-        <li><Link to="/autism">Autism</Link></li> */}
-        <li><Link to="/Neurodiversity">Neurodiversity</Link></li>
+        <li><Link to="/neurodiversity">Neurodiversity</Link></li>
         <li><Link to="/SuccessStories">Success Stories</Link></li>
         <li><Link to="/chrome-extension">Focus Extension</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li> {/* Add Dashboard Link */}
       </ul>
     </nav>
   );
