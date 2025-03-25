@@ -4,6 +4,7 @@ import bg1 from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
 import Neurodiversity from "./Neurodiversity";  // ✅ Import Neurodiversity section
+import SuccessStories from "./SuccessStories";
 
 
 
@@ -42,6 +43,11 @@ const Home = () => {
       {/* Experience Neurodiversity - Now below */}
       <section className="neurodiversity-container">
         <Neurodiversity />  
+      </section>
+
+      {/* Success Stories - Now below */}
+      <section className="success-stories">
+        <SuccessStories />
       </section>
     </main>
   );

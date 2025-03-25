@@ -6,7 +6,7 @@
 html, body {
   overflow-x: hidden;  /* Stops horizontal scroll */
   width: 100vw; 
-  background:  #ffdde1;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
 
 }
 
@@ -131,12 +131,12 @@ html, body {
 }
 
 .experience-container {
-  background: #ffdde1;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
   color: #101113;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  /* height: 100vh; */
   text-align: center;
-  padding: 90px;
+  /* padding: 90px; */
   font-size: 1.5rem;
   
 }
@@ -188,7 +188,7 @@ html, body {
 .section-content {
   margin-top: 30px;
   padding: 20px;
-  max-width: 100%;
+  max-width: 100vw;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -201,7 +201,7 @@ html, body {
   min-height: 100vh;
   width: 100vw;
   background: linear-gradient(to right, #ffdde1, #c1f4f8);
-  padding: 140px 0;
+  
 }
 
 /* 🔹 Dyslexia Heading */
@@ -599,6 +599,15 @@ html, body {
   transform: scale(1); /* Ensure it shows properly */
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;  /* Ensures it's above everything */
+}
+.chatbot-container {
+  z-index: 10000; /* Above everything */
+}
 
 /* Hide the chatbot when closed */
 .closed {
@@ -733,4 +742,76 @@ html, body {
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
+}
+/* Success Stories Section */
+.success-stories {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
+}
+
+/* Heading */
+.success-stories h2 {
+  padding-top: 10px;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Stories Grid */
+.stories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Story Card */
+.story-card {
+  background: rgb(252, 243, 247);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Story Image */
+.story-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Story Name */
+.story-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #084941;
+}
+
+/* Story Description */
+.story-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Read More Button */
+.story-card a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #5388c5;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.story-card a:hover {
+  background: #0056b3;
 }
