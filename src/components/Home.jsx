@@ -5,6 +5,7 @@ import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
 import Neurodiversity from "./Neurodiversity";  // ✅ Import Neurodiversity section
 import SuccessStories from "./SuccessStories";
+import Chatbot from "./Chatbot";
 
 
 
@@ -49,6 +50,11 @@ const Home = () => {
       <section className="success-stories">
         <SuccessStories />
       </section>
+        
+        {/* Chatbot - Now below */}
+       <section className="chatbot">
+        <Chatbot />   
+        </section>
     </main>
   );
 };

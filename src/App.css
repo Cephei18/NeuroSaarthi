@@ -567,7 +567,7 @@ html, body {
 
 /* 🔹 Floating Chat Icon */
 .chatbot-icon {
-  background: #c1f4f8;
+  background: #11484c;
   color: white;
   padding: 12px 15px;
   border-radius: 50%;
@@ -670,7 +670,7 @@ html, body {
 .chatbot-input {
   display: flex;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(215, 128, 179, 0.1);
 }
 
 .chatbot-input input {
