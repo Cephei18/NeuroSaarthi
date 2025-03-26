@@ -1,8 +1,8 @@
 /* 🔹 General Page Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #1a1a2e;  /* Dark blue background */
-    color: #ffffff;
+    background: linear-gradient(to right, #ffdde1, #c1f4f8);
+    color: #0f0101;
     text-align: center;
     padding: 50px;
 }
@@ -10,7 +10,7 @@ body {
 /* 🔹 Page Title */
 h1 {
     font-size: 2.5rem;
-    color: #ff4d6d; /* Pink color */
+    color: #0f0b0c; /* Pink color */
     margin-bottom: 30px;
 }
 
@@ -30,11 +30,11 @@ p {
 
 /* 🔹 Extension Box */
 .extension-box {
-    background: #22254b; /* Darker box for contrast */
+    background: #f1dfe1;
     border-radius: 12px;
     padding: 25px;
     width: 300px;
-    box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    box-shadow: 0 0 15px rgba(230, 125, 144, 0.4);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -45,13 +45,13 @@ p {
 /* 🔹 Extension Title */
 .extension-box h2 {
     font-size: 1.5rem;
-    color: #ff758c;
+    color: #d37988;
     margin-bottom: 15px;
 }
 
 /* 🔹 Download Buttons */
 button {
-    background: linear-gradient(to right, #ffdde1, #c1f4f8);
+    background: #58a5aa;
     border: none;
     color: white;
     padding: 12px 25px;
@@ -65,7 +65,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, #ffdde1, #c1f4f8);
+    background:#2b6b6f;
     transform: scale(1.05);
 }
 
