@@ -10,8 +10,9 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/neurodiversity">Neurodiversity</Link></li>
         <li><Link to="/SuccessStories">Success Stories</Link></li>
-        <li><Link to="/chrome-extension">Focus Extension</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li> {/* Add Dashboard Link */}
+        <li><Link to="/focus-extension">Focus Extension</Link></li>
+
       </ul>
     </nav>
   );

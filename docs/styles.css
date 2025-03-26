@@ -1,0 +1,64 @@
+/* 🔹 General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffd1dc, #ffe4e1); /* Soft Pink Theme */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Centered Container */
+.container {
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Header */
+h1 {
+    color: #8b0000; /* Dark Red for contrast */
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Paragraph */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Download Button */
+.download-button {
+    background: #ff6b81; /* Bright Pink */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-button:hover {
+    background: #d43f57; /* Darker Pink */
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}

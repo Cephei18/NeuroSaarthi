@@ -11,6 +11,7 @@ import Chatbot from "./components/Chatbot";
 import SuccessStories from "./components/SuccessStories";
 import ChatbotPage from "./components/ChatbotPage"; // ✅ Ensure it's imported
 import Certification from "./components/Certification"; // Import Certification
+import FocusExtension from "./components/FocusExtension";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/chatbot-page" element={<ChatbotPage />} />  {/* ✅ Added the route */}
         <Route path="/successstories" element={<SuccessStories />} />
         <Route path="/certification" element={<Certification />} />  {/* ✅ Added the missing route */}
+        <Route path="/focus-extension" element={<FocusExtension />} /> {/* ✅ Added the route */}
       </Routes>
     </Router>
   );
