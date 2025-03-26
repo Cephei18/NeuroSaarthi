@@ -5,11 +5,12 @@ import Navbar from "./components/Navbar";
 import Dyslexia from "./components/Dyslexia";
 import ADHD from "./components/ADHD";
 import Autism from "./components/Autism";
-import Dashboard from "./components/Dashboard";  // Import Dashboard
-import Neurodiversity from "./components/Neurodiversity";  // Import Dashboar
+import Dashboard from "./components/Dashboard";  
+import Neurodiversity from "./components/Neurodiversity";  
 import Chatbot from "./components/Chatbot";
 import SuccessStories from "./components/SuccessStories";
-
+import ChatbotPage from "./components/ChatbotPage"; // ✅ Ensure it's imported
+import Certification from "./components/Certification"; // Import Certification
 
 const App = () => {
   return (
@@ -17,16 +18,17 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />  {/* Add Dashboard Route */}
+        <Route path="/dashboard" element={<Dashboard />} />  
         <Route path="/neurodiversity" element={<Neurodiversity />} />
         <Route path="/dyslexia" element={<Dyslexia />} />
         <Route path="/adhd" element={<ADHD />} />
         <Route path="/autism" element={<Autism />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/chatbot-page" element={<ChatbotPage />} />  {/* ✅ Added the route */}
         <Route path="/successstories" element={<SuccessStories />} />
+        <Route path="/certification" element={<Certification />} />  {/* ✅ Added the missing route */}
       </Routes>
     </Router>
-    
   );
 };
 

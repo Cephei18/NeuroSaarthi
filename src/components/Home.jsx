@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";  
 import "../App.css"; 
 import bg1 from "../assets/bg1.jpg"; 
 import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
-import Neurodiversity from "./Neurodiversity";  // ✅ Import Neurodiversity section
+import Neurodiversity from "./Neurodiversity";  
 import SuccessStories from "./SuccessStories";
-import Chatbot from "./Chatbot";
-
-
+import Chatbot from "./Chatbot";  // ✅ Import Floating Chatbot
 
 const images = [bg1, bg2, bg3];
 
@@ -23,8 +22,8 @@ const Home = () => {
   }, []);
 
   return (
-    <main>  {/* ✅ Wrap everything inside a main tag */}
-      {/* Background slider - remains on top */}
+    <main>  
+      {/* 🔹 Background Slider */}
       <section className="home">
         <div
           className="background-slider"
@@ -36,25 +35,33 @@ const Home = () => {
               Explore Neurodiversity through Augmented Reality.  
               Learn, experience, and empathize like never before.
             </p>
-            <button className="chatbot-button">Chat with Our AI</button>
+            {/* ✅ Fixed Button - Opens Chatbot Page */}
+            <Link to="/chatbot-page">
+              <button className="chatbot-button">Chat with Our AI</button>
+            </Link>
+
+            {/* ✅ New Button - Opens Certification Page */}
+            <Link to="/certification">
+              <button className="certification-button">Get Your Certificate</button>
+            </Link>
+
           </div>
         </div>
       </section>
 
-      {/* Experience Neurodiversity - Now below */}
+      {/* 🔹 Neurodiversity Section */}
       <section className="neurodiversity-container">
         <Neurodiversity />  
       </section>
 
-      {/* Success Stories - Now below */}
+      {/* 🔹 Success Stories Section */}
       <section className="success-stories">
         <SuccessStories />
       </section>
-        
-        {/* Chatbot - Now below */}
-       <section className="chatbot">
-        <Chatbot />   
-        </section>
+
+      {/* ✅ Floating Chatbot (Visible on All Pages) */}
+      <Chatbot />
+
     </main>
   );
 };
