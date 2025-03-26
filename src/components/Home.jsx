@@ -7,7 +7,7 @@ import bg3 from "../assets/bg3.jpg";
 import Neurodiversity from "./Neurodiversity";  
 import SuccessStories from "./SuccessStories";
 import Chatbot from "./Chatbot";  // ✅ Import Floating Chatbot
-import FocusExtension from "./FocusExtension";
+
 
 const images = [bg1, bg2, bg3];
 
@@ -63,10 +63,6 @@ const Home = () => {
       {/* ✅ Floating Chatbot (Visible on All Pages) */}
       <Chatbot />
 
-      {/* ✅ Focus Extension Section */}
-      <section className="focus-extension">
-        <FocusExtension />
-      </section>
 
     </main>
   );

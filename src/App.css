@@ -75,7 +75,7 @@ html, body {
   background-color: #ffdde1;
   color: black;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-size: 1.2rem;
   border-radius: 5px;
   cursor: pointer;
@@ -932,6 +932,23 @@ html, body {
 
 .download-btn:hover {
   background: #2e4d4f;
+}
+
+
+.certification-button {
+    background-color: #ffdde1;
+    color: black;
+    border: none;
+    margin-left: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.certification-button:hover {
+  background-color:  #f3abb3;
 }
 
 /* 🔹 Focus Extension Container */
