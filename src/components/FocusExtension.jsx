@@ -6,9 +6,9 @@ const FocusExtension = () => {
     <div className="focus-extension-container">
       {/* 🔹 Header Section */}
       <h1 className="focus-header">Enhance Your Focus with NeuroSaarthi</h1>
-      <p className="focus-description">
+      {/* <p className="focus-description">
         Our Chrome extension helps minimize distractions, making online work easier for neurodiverse individuals.  
-      </p>
+      </p> */}
 
       {/* 🔹 Download Button */}
       <a 
@@ -21,7 +21,7 @@ const FocusExtension = () => {
 
       {/* 🔹 Installation Guide */}
       <div className="focus-steps">
-        <h2>How to Install</h2>
+        <h2>Steps to Install</h2>
         <ol>
           <li>Download the ZIP file using the button above.</li>
           <li>Go to <b>chrome://extensions/</b> in your browser.</li>

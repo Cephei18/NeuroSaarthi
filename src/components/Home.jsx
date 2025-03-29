@@ -5,8 +5,10 @@ import bg1 from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.jpg";
 import Neurodiversity from "./Neurodiversity";  
+import FocusExtension from "./FocusExtension";
 import SuccessStories from "./SuccessStories";
 import Chatbot from "./Chatbot";  // ✅ Import Floating Chatbot
+
 
 
 const images = [bg1, bg2, bg3];
@@ -54,6 +56,12 @@ const Home = () => {
       <section className="neurodiversity-container">
         <Neurodiversity />  
       </section>
+
+      <section className="focus-extension-container">
+        <FocusExtension />
+      </section>
+
+      
 
       {/* 🔹 Success Stories Section */}
       <section className="success-stories">
