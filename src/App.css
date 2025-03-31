@@ -1045,3 +1045,128 @@ ol {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
+/* 🔹 General Styling */
+
+
+/* 🔹 Login Container */
+.login-container {
+  background-color: #16213e;  /* Slightly lighter dark blue */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
+  text-align: center;
+  width: 350px;
+  margin: 0 auto; /* Centering the container */
+  margin-left: 500px;
+  
+}
+
+
+/* 🔹 Heading */
+.login-container h2 {
+  color: #ff4d6d; /* Pink */
+  margin-bottom: 20px;
+}
+
+/* 🔹 Input Fields */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ff4d6d;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* 🔹 Input Placeholder */
+.login-container input::placeholder {
+  color: #b3b3b3;
+}
+
+/* 🔹 Submit Button */
+.login-container button {
+  width: 100%;
+  background: linear-gradient(90deg, #ff4d6d, #ff758c); /* Pink gradient */
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.login-container button:hover {
+  background: linear-gradient(90deg, #ff758c, #ff4d6d); /* Reverse gradient */
+  transform: scale(1.05);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 400px) {
+  .login-container {
+      width: 90%;
+  }
+}
+/* 🔹 Signup Container */
+.signup-container {
+  background-color: #16213e;  /* Slightly lighter dark blue */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
+  text-align: center;
+  width: 350px;
+  margin-left: 500px;
+
+}
+
+/* 🔹 Heading */
+.signup-container h2 {
+  color: #ff4d6d; /* Pink */
+  margin-bottom: 20px;
+}
+
+/* 🔹 Input Fields */
+.signup-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ff4d6d;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* 🔹 Input Placeholder */
+.signup-container input::placeholder {
+  color: #b3b3b3;
+}
+
+/* 🔹 Submit Button */
+.signup-container button {
+  width: 100%;
+  background: linear-gradient(90deg, #ff4d6d, #ff758c); /* Pink gradient */
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.signup-container button:hover {
+  background: linear-gradient(90deg, #ff758c, #ff4d6d); /* Reverse gradient */
+  transform: scale(1.05);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 400px) {
+  .signup-container {
+      width: 90%;
+  }
+}

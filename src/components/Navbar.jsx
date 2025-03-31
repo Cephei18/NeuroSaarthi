@@ -11,7 +11,9 @@ const Navbar = () => {
         <li><Link to="/neurodiversity">Neurodiversity</Link></li>
         <li><Link to="/SuccessStories">Success Stories</Link></li>
         <li><Link to="/focus-extension">Focus Extension</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li> {/* Add Dashboard Link */}
+        <li><Link to="/dashboard">Dashboard</Link></li> {/* Dashboard Link */}
+        <li><Link to="/login">Login</Link></li> {/* ✅ Login Link */}
+        <li><Link to="/signup">Signup</Link></li> {/* ✅ Signup Link */}
       </ul>
     </nav>
   );
