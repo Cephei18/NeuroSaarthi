@@ -19,14 +19,17 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+    <div className="signup-page">
+  <div className="signup-container">
+    <h2>Sign Up</h2>
+    <form onSubmit={handleSignup}>
+      <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
+      <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
   );
 };
 

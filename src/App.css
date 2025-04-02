@@ -134,9 +134,9 @@ html, body {
   background: linear-gradient(to right, #ffdde1, #c1f4f8);
   color: #101113;
   width: 100vw;
-  /* height: 100vh; */
+  height: 75vh;
   text-align: center;
-  /* padding: 90px; */
+  padding-top: 90px;
   font-size: 1.5rem;
   
 }
@@ -691,59 +691,7 @@ html, body {
   border-radius: 50%;
   cursor: pointer;
 }
-.dashboard-container {
-  width: 100vw;
-  margin: auto;
-  padding: 20px;
-  padding-top: 100px;
-  background: linear-gradient(to right, #ffdde1, #c1f4f8);
-  color: #101113;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
 
-.dashboard-header {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: #1c3333;
-}
-
-.progress-section {
-  margin-top: 20px;
-}
-
-.progress-bar {
-  width: 100%;
-  background: #ddd;
-  border-radius: 5px;
-  height: 10px;
-}
-
-.progress-fill {
-  height: 100%;
-  background: #0078ff;
-  border-radius: 5px;
-}
-
-.saved-content, .recommendations, .achievements {
-  margin-top: 20px;
-  padding: 10px;
-  background: rgb(215, 181, 199);
-  border-radius: 5px;
-}
-
-.badges {
-  display: flex;
-  gap: 10px;
-}
-
-.badge {
-  background: #ca5379;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
 /* Success Stories Section */
 .success-stories {
   text-align: center;
@@ -1045,8 +993,18 @@ ol {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
-/* 🔹 General Styling */
 
+/* 🔹 Login Container */
+
+/* 🔹 Full Page Centering */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 20px;
+}
 
 /* 🔹 Login Container */
 .login-container {
@@ -1055,12 +1013,9 @@ ol {
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
   text-align: center;
-  width: 350px;
-  margin: 0 auto; /* Centering the container */
-  margin-left: 500px;
-  
+  width: 100%;
+  max-width: 350px;  /* Ensures it doesn’t get too wide */
 }
-
 
 /* 🔹 Heading */
 .login-container h2 {
@@ -1107,9 +1062,20 @@ ol {
 /* 🔹 Responsive Design */
 @media (max-width: 400px) {
   .login-container {
-      width: 90%;
+    width: 90%;
   }
 }
+
+/* 🔹 Full Page Centering */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 20px;
+}
+
 /* 🔹 Signup Container */
 .signup-container {
   background-color: #16213e;  /* Slightly lighter dark blue */
@@ -1117,9 +1083,8 @@ ol {
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
   text-align: center;
-  width: 350px;
-  margin-left: 500px;
-
+  width: 100%;
+  max-width: 350px;  /* Ensures it doesn’t get too wide */
 }
 
 /* 🔹 Heading */
@@ -1167,6 +1132,173 @@ ol {
 /* 🔹 Responsive Design */
 @media (max-width: 400px) {
   .signup-container {
-      width: 90%;
+    width: 90%;
   }
+}
+
+/* 🔹 Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+  /* max-width: 1200px; */
+  margin-top: 200px;
+  /* margin-left: 150px; */
+  /* padding: 20px; */
+}
+
+/* 🔹 Profile Section (Large Standalone Card) */
+.profile-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #406f9f, #0a3d50); /* Pink Gradient */
+  color: white;
+  width: 100vw;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 3px solid white;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-details h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.profile-details p {
+  margin: 5px 0;
+}
+
+/* 🔹 Other Sections (Arranged in Grid Below Profile) */
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100vw;
+  max-width: 800px;
+}
+
+/* 🔹 Individual Cards */
+.dashboard-card {
+  background: #1a1a2e;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .profile-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
+  }
+
+  .profile-card img {
+      margin-bottom: 10px;
+  }
+
+  .dashboard-sections {
+      grid-template-columns: 1fr; /* Stacks cards on small screens */
+  }
+}
+/* 🔹 Footer Styling */
+.footer {
+  background-color: #1a1a2e; /* Dark Theme */
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🔹 Footer Container */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 🔹 Footer Logo & Tagline */
+.footer-logo h2 {
+  font-size: 1.8rem;
+  color: #ff8b94;
+  margin: 0;
+}
+
+.footer-logo p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* 🔹 Footer Navigation Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #ff8b94;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* 🔹 Social Media Icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #ff8b94;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffffff;
+}
+
+/* 🔹 Copyright Notice */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
 }
