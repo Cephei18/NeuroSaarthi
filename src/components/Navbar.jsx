@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../Firebase";
 import { signOut } from "firebase/auth";
 
 const Navbar = ({ isLoggedIn }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="navbar">
       <div className="logo">NeuroSaarthi</div>
+       {/* Hamburger Menu */}
+       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
       <ul className="nav-links">
         {isLoggedIn ? (
           <>

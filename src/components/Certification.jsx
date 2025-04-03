@@ -33,6 +33,7 @@ const Certification = () => {
   };
 
   return (
+    <div className="certificate-page">
     <div className="certificate-container">
       <h2>Get Your Certificate</h2>
       <p>Enter your name and download a certificate for Kickstarting your journey with NeuroSaarthi </p>
@@ -48,6 +49,7 @@ const Certification = () => {
       <button className="download-btn" onClick={generateCertificate}>
         Download Certificate
       </button>
+    </div>
     </div>
   );
 };

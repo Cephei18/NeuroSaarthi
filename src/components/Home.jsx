@@ -43,10 +43,10 @@ const Home = () => {
               <button className="chatbot-button">Chat with Our AI</button>
             </Link>
 
-            {/* ✅ New Button - Opens Certification Page */}
+            {/* ✅ New Button - Opens Certification Page
             <Link to="/certification">
               <button className="certification-button">Get Your Certificate</button>
-            </Link>
+            </Link> */}
 
           </div>
         </div>
