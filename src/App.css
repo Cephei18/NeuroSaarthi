@@ -1336,26 +1336,128 @@ ol {
   font-size: 0.9rem;
   color: #bbbbbb;
 }
+/* 🌟 Dashboard Container */
 .dashboard-container {
-  text-align: center;
-  padding: 40px;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8); /* Matching the theme */
+  padding: 40px 20px;
+  margin-top: 100px; /* To avoid navbar overlap */
+  margin-bottom: 120px;
 }
 
-.welcome-text {
-  font-size: 3rem;
+/* 🎉 Typing Effect for Welcome Message */
+
+.dashboard-container h1 {
+  font-size: 2.5rem;
   font-weight: bold;
   color: #000000;
-  font-family: "Poppins", sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #100104; /* Blinking cursor effect */
-  display: inline-block;
-  animation: blinkCursor 0.8s infinite;
+  margin-bottom: 50px;
 }
 
+/* ⌨️ Typing Animation */
+@keyframes typingEffect {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ✨ Blinking Cursor */
 @keyframes blinkCursor {
-  50% {
-    border-color: transparent;
+  50% { border-color: transparent; }
+}
+
+/* 👤 Profile Section */
+.profile-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  width: 50%;
+  min-width: 350px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+/* 🖼️ Profile Image */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  margin-right: 20px;
+}
+
+/* ℹ️ Profile Details */
+.profile-details {
+  text-align: left;
+  flex: 1;
+}
+
+.profile-details h2 {
+  font-size: 1.8rem;
+  color: #000000;
+}
+
+.profile-details p {
+  font-size: 1rem;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* 🔹 Dashboard Sections (VERTICAL Cards) */
+.dashboard-sections {
+  display: flex;
+  flex-direction: column; /* 📌 Vertical Layout */
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+  min-width: 350px;
+}
+
+/* 🏆 Themed Cards (Similar to Dyslexia Page) */
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card h3 {
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 15px;
+  }
+
+  .dashboard-sections {
+    width: 90%;
   }
 }
