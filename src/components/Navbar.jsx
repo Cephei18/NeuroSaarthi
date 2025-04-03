@@ -1,19 +1,32 @@
 import React from "react";
-import "../App.css"; // Import CSS file
-import { Link } from "react-router-dom"; // For navigation
+import { Link } from "react-router-dom";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn }) => {
   return (
     <nav className="navbar">
-      <div className="logo">NeuroSaarthi</div> {/* App Name */}
+      <div className="logo">NeuroSaarthi</div>
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/neurodiversity">Neurodiversity</Link></li>
-        <li><Link to="/SuccessStories">Success Stories</Link></li>
-        <li><Link to="/focus-extension">Focus Extension</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li> {/* Dashboard Link */}
-        <li><Link to="/login">Login</Link></li> {/* ✅ Login Link */}
-        <li><Link to="/signup">Signup</Link></li> {/* ✅ Signup Link */}
+        {isLoggedIn ? (
+          <>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/neurodiversity">Neurodiversity</Link></li>
+            <li><Link to="/focus-extension">Focus Extension</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><button onClick={() => signOut(auth)}>Logout</button></li>
+
+          </>
+        ) : (
+          <>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/neurodiversity">Neurodiversity</Link></li>
+            <li><Link to="/successstories">Success Stories</Link></li>
+            <li><Link to="/focus-extension">Focus Extension</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
+          </>
+        )}
       </ul>
     </nav>
   );

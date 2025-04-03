@@ -1,5 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { auth } from "./firebase"; // Import Firebase auth
+import { useAuthState } from "react-firebase-hooks/auth"; // Firebase login tracking
+
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
@@ -8,22 +11,24 @@ import Dyslexia from "./components/Dyslexia";
 import ADHD from "./components/ADHD";
 import Autism from "./components/Autism";
 import Chatbot from "./components/Chatbot";
-import ChatbotPage from "./components/ChatbotPage"; 
+import ChatbotPage from "./components/ChatbotPage";
 import SuccessStories from "./components/SuccessStories";
 import Certification from "./components/Certification";
 import FocusExtension from "./components/FocusExtension";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Footer from "./components/Footer"; // ✅ Footer imported at bottom
+import Footer from "./components/Footer";
 
 const App = () => {
+  const [user] = useAuthState(auth); // Track user login state
+
   return (
     <Router>
-      <Navbar /> {/* ✅ Navbar at the top */}
+      <Navbar isLoggedIn={user} /> {/* Pass login state to Navbar */}
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} /> 
         <Route path="/neurodiversity" element={<Neurodiversity />} />
         <Route path="/dyslexia" element={<Dyslexia />} />
         <Route path="/adhd" element={<ADHD />} />
@@ -37,7 +42,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
       </Routes>
       
-      <Footer /> {/* ✅ Footer at the bottom */}
+      <Footer />
     </Router>
   );
 };

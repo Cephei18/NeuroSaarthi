@@ -1066,8 +1066,8 @@ ol {
   }
 }
 
-/* 🔹 Full Page Centering */
-.signup-page {
+/* 🔹 Signup Form Container */
+.Signup-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1075,26 +1075,27 @@ ol {
   width: 100vw; /* Full viewport width */
   padding: 20px;
 }
-
-/* 🔹 Signup Container */
 .signup-container {
-  background-color: #16213e;  /* Slightly lighter dark blue */
+  background-color: #16213e; /* Dark blue */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(255, 77, 109, 0.4);
   text-align: center;
-  width: 100%;
-  max-width: 350px;  /* Ensures it doesn’t get too wide */
+  width: 400px;
+  margin: 50px auto; /* Centering the container */
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* 🔹 Heading */
 .signup-container h2 {
   color: #ff4d6d; /* Pink */
   margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 /* 🔹 Input Fields */
-.signup-container input {
+.signup-container input,
+.signup-container select {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -1103,11 +1104,30 @@ ol {
   background: #0f3460;
   color: #ffffff;
   font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease-in-out;
 }
 
-/* 🔹 Input Placeholder */
+/* 🔹 Input Fields Hover Effect */
+.signup-container input:focus,
+.signup-container select:focus {
+  border-color: #ff758c;
+}
+
+/* 🔹 Placeholder Text */
 .signup-container input::placeholder {
   color: #b3b3b3;
+}
+
+/* 🔹 Dropdown Styling */
+.signup-container select {
+  appearance: none; /* Removes default dropdown styling */
+  cursor: pointer;
+}
+
+/* 🔹 Dropdown Arrow */
+.signup-container select::-ms-expand {
+  display: none;
 }
 
 /* 🔹 Submit Button */
@@ -1129,12 +1149,27 @@ ol {
   transform: scale(1.05);
 }
 
-/* 🔹 Responsive Design */
-@media (max-width: 400px) {
-  .signup-container {
-    width: 90%;
+/* 🔹 Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* 🔹 Responsive Design */
+@media (max-width: 450px) {
+  .signup-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
 
 /* 🔹 Dashboard Container */
 .dashboard-container {
@@ -1185,16 +1220,16 @@ ol {
 }
 
 /* 🔹 Other Sections (Arranged in Grid Below Profile) */
-.dashboard-sections {
+/* .dashboard-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   width: 100vw;
   max-width: 800px;
-}
+} */
 
 /* 🔹 Individual Cards */
-.dashboard-card {
+/* .dashboard-card {
   background: #1a1a2e;
   color: white;
   padding: 15px;
@@ -1210,24 +1245,23 @@ ol {
 
 .dashboard-card p {
   font-size: 1rem;
-}
+} */
 
 /* 🔹 Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .profile-card {
       flex-direction: column;
       text-align: center;
       padding: 15px;
-  }
+  } */
 
-  .profile-card img {
+  /* .profile-card img {
       margin-bottom: 10px;
   }
 
   .dashboard-sections {
       grid-template-columns: 1fr; /* Stacks cards on small screens */
-  }
-}
+  
 /* 🔹 Footer Styling */
 .footer {
   background-color: #1a1a2e; /* Dark Theme */
@@ -1301,4 +1335,27 @@ ol {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #bbbbbb;
+}
+.dashboard-container {
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #100104; /* Blinking cursor effect */
+  display: inline-block;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
 }

@@ -19,6 +19,7 @@
     "mind-ar": "^1.2.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^7.3.0",
     "tesseract.js": "^6.0.0",
     "three": "^0.174.0"
