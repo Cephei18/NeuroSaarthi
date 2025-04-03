@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { auth } from "./firebase"; // Import Firebase auth
+import { auth } from "./Firebase"; // Import Firebase auth
 import { useAuthState } from "react-firebase-hooks/auth"; // Firebase login tracking
 
 import Home from "./components/Home";
@@ -18,6 +18,7 @@ import FocusExtension from "./components/FocusExtension";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
+import Reports from "./components/Reports";
 
 const App = () => {
   const [user] = useAuthState(auth); // Track user login state
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/focus-extension" element={<FocusExtension />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reports" element={user ? <Reports /> : <Navigate to="/login" />} /> {/* Protected route */}
       </Routes>
       
       <Footer />

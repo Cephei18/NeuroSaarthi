@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";  // ✅ Import useNavigate
 import "../App.css";
-import { auth, db } from "../firebase";
+import { auth, db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
   const [welcomeText, setWelcomeText] = useState("");
-  
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
   useEffect(() => {
     const fetchUserData = async () => {
       if (auth.currentUser) {
@@ -58,6 +60,9 @@ const Dashboard = () => {
         <div className="dashboard-card">
           <h3>📊 Personalized Reports</h3>
           <p>View AI-generated insights based on your experience.</p>
+          <button className="open-report-btn" onClick={() => navigate("/reports")}>
+            View Report
+          </button>
         </div>
         <div className="dashboard-card">
           <h3>🎯 Exercise Sessions</h3>
