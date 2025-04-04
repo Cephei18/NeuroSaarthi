@@ -1,37 +1,61 @@
 import React, { useState } from "react";
-import "../App.css";
+import axios from "axios";
+import "../App.css"; // Import your CSS file for styling
 
-const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false); // Toggle chatbot visibility
+function Chatbot() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const API_URL = "https://neurosarthi-chatbot-backend.onrender.com/chat";
+
+  const toggleChatbot = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const sendMessage = async () => {
+    if (!input.trim()) return;
+    setMessages([...messages, { text: input, sender: "user" }]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const res = await axios.post(API_URL, { message: input });
+      setMessages((prev) => [...prev, { text: res.data.response, sender: "bot" }]);
+    } catch {
+      setMessages((prev) => [...prev, { text: "Error connecting to chatbot.", sender: "bot" }]);
+    }
+    setLoading(false);
+  };
 
   return (
-    <div className="chatbot-wrapper">
-      {/* Floating Chat Icon (💬) - Click to Open */}
-      <div className="chatbot-icon" onClick={() => setIsOpen(!isOpen)}>
-        💬
-      </div>
+    <>
+      {/* Floating Chatbot Button */}
+      <button className="chatbot-button" onClick={toggleChatbot}>💬</button>
 
       {/* Chatbot Window */}
-      <div className={`chatbot-container ${isOpen ? "open" : "closed"}`}>
-        {/* Header */}
-        <div className="chatbot-header">
-          <span>NeuroSaarthi Chatbot</span>
-          <button className="close-btn" onClick={() => setIsOpen(false)}>✖</button>
+      <div className={`chatbot-container ${isOpen ? "open" : ""}`}>
+        <div className="chatbot-header">Talk to NeuroSaarthi</div>
+        <div className="chat-window">
+          {messages.map((msg, i) => (
+            <div key={i} className={`message ${msg.sender}`}>
+              {msg.text}
+            </div>
+          ))}
+          {loading && <div className="message bot typing">Typing...</div>}
         </div>
-
-        {/* Messages */}
-        <div className="chatbot-messages">
-          <div className="bot-message">Hello! How can I help you?</div>
-        </div>
-
-        {/* Input Box */}
-        <div className="chatbot-input">
-          <input type="text" placeholder="Type your message..." />
-          <button>➤</button>
+        <div className="input-area">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Ask something..."
+          />
+          <button onClick={sendMessage}>Send</button>
         </div>
       </div>
-    </div>
+    </>
   );
-};
+}
 
 export default Chatbot;
