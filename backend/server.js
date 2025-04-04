@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
@@ -9,7 +10,69 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = process.env.GEMINI_API_KEY;
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+/**
+ * Endpoint 1: Generate personalized progress report
+ */
+app.post("/generate", async (req, res) => {
+  try {
+    const { userLog } = req.body;
+
+    const prompt = `
+Generate a personalized progress report for a neurodiverse individual based on their feedback and engagement with exercises. 
+Analyze their improvement in focus, consistency, and effort. If they have shared struggles, address them with supportive advice. 
+Provide motivation to continue daily practice and highlight specific areas they are doing well in. 
+
+Keep the tone encouraging, interactive, and supportive—less formal and more human. 
+Format the response with these sections:
+1. Progress Overview
+2. Areas of Improvement
+3. Personalized Advice
+4. Motivation & Encouragement
+
+Here's the user's log data:
+`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: `${prompt}\n${JSON.stringify(userLog)}`,
+    });
+
+    res.json({ text: response.text });
+  } catch (error) {
+    console.error("Error fetching Gemini API (report):", error.message);
+    res.status(500).json({ error: "Failed to generate report" });
+  }
+});
+
+/**
+ * Endpoint 2: Generate calming exercise
+ */
+app.post("/generate-exercise", async (req, res) => {
+  try {
+    const prompt = `
+Generate a soothing and engaging focus-enhancing exercise for neurodiverse individuals (ADHD, autism, dyslexia). 
+Include a simple task they can perform, such as a breathing exercise, a short puzzle, or a movement activity. 
+If it involves a physical action, suggest a timer duration. 
+Keep it easy to follow and calming.
+`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: prompt,
+    });
+
+    res.json({ exercise: response.text });
+  } catch (error) {
+    console.error("Error fetching Gemini API (exercise):", error.message);
+    res.status(500).json({ error: "Failed to generate exercise" });
+  }
+});
+
+// Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Route to handle AI requests
 // 👇 replace your existing app.post("/generate", ...) with this:
@@ -64,30 +127,3 @@ const API_KEY = process.env.GEMINI_API_KEY;
 //       res.status(500).json({ error: "Failed to fetch AI response" });
 //     }
 //   });
-import { GoogleGenAI } from "@google/genai";
-
-// Initialize the AI instance
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-// Define your endpoint
-app.post("/generate", async (req, res) => {
-  try {
-    const { userLog } = req.body;
-
-    // Make the API call using the correct method
-    const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash", // Specify the model
-      contents: `Analyze this user log: ${JSON.stringify(userLog)}`, // The log as the content
-    });
-
-    // Send the generated content back as the response
-    res.json({ text: response.text });
-  } catch (error) {
-    console.error("Error fetching Gemini API:", error.message);
-    res.status(500).json({ error: "Failed to fetch AI response" });
-  }
-});
-
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
