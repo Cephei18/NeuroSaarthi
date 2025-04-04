@@ -46,7 +46,7 @@ const Dashboard = () => {
 
       {/* Profile Section */}
       <div className="profile-card">
-        <img src={userData?.profilePic || "/default-profile.png"} alt="Profile" className="profile-pic" />
+      <img src="/src/assets/default-profile.jpg" alt="Profile" className="profile-pic" />
         <div className="profile-details">
           <h2>{userData?.name || "User"}</h2>
           <p><strong>Age:</strong> {userData?.age || "N/A"}</p>
@@ -67,11 +67,25 @@ const Dashboard = () => {
         <div className="dashboard-card">
           <h3>🎯 Exercise Sessions</h3>
           <p>Daily interactive exercises tailored for you.</p>
+          <button onClick={() => navigate("/exercise")} className="dashboard-btn">
+        Start Exercise
+      </button>
         </div>
         <div className="dashboard-card">
           <h3>📝 Share Your Journey</h3>
           <p>Share your experiences and read inspiring stories.</p>
+          <button className="open-journey-btn" onClick={() => navigate("/share-journey")}>
+              Share Now
+           </button>
         </div>
+        
+      <div className="dashboard-card">
+        <h3>📖 Read Shared Journeys</h3>
+        <p>Explore experiences shared by others in the community.</p>
+        <button className="open-journey-btn" onClick={() => navigate("/read-journeys")}>
+          Read Journeys
+        </button>
+      </div>
       </div>
     </div>
   );

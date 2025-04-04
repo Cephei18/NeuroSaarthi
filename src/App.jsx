@@ -19,6 +19,11 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 import Reports from "./components/Reports";
+import Exercise from "./components/Exercise";
+import ShareJourney from "./components/ShareJourney";
+import ReadJourneys from "./components/ReadJourneys";
+
+import "./App.css"; // Import CSS for styling
 
 const App = () => {
   const [user] = useAuthState(auth); // Track user login state
@@ -42,6 +47,11 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reports" element={user ? <Reports /> : <Navigate to="/login" />} /> {/* Protected route */}
+        <Route path="/exercise" element={user ? <Exercise /> : <Navigate to="/login" />} /> {/* Protected route */}
+        <Route path="/share-journey" element={<ShareJourney />} />
+        <Route path="/read-journeys" element={<ReadJourneys />} /> {/* Public route */}
+        
+        {/* Redirect to home if no match */}
       </Routes>
       
       <Footer />
