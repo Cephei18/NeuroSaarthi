@@ -18,6 +18,7 @@ const Navbar = ({ isLoggedIn }) => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/neurodiversity">Neurodiversity</Link></li>
             <li><Link to="/focus-extension">Focus Extension</Link></li>
+            <li><Link to="/affiliation-tab">Affiliation</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li><button onClick={() => signOut(auth)}>Logout</button></li>
 
@@ -26,8 +27,8 @@ const Navbar = ({ isLoggedIn }) => {
           <>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/neurodiversity">Neurodiversity</Link></li>
-            <li><Link to="/successstories">Success Stories</Link></li>
             <li><Link to="/focus-extension">Focus Extension</Link></li>
+            <li><Link to="/affiliation-tab">Affiliation</Link></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/signup">Signup</Link></li>
           </>

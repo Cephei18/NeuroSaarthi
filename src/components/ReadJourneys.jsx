@@ -1,44 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../Firebase"; // Ensure Firebase is correctly imported
-import { collection, getDocs } from "firebase/firestore";
-import "../App.css"; // Ensure your CSS file is correctly imported
+// src/pages/ReadJourneys.jsx
+import React, { useEffect, useState } from "react";
+import { db } from "../Firebase";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
 const ReadJourneys = () => {
-  const [journeys, setJourneys] = useState([]);
+  const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    const fetchJourneys = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "sharedJourneys"));
-        const journeysList = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setJourneys(journeysList);
-      } catch (error) {
-        console.error("Error fetching journeys:", error);
-      }
+    const fetchStories = async () => {
+      const q = query(collection(db, "journeys"), orderBy("timestamp", "desc"));
+      const snapshot = await getDocs(q);
+      const storiesData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setStories(storiesData);
     };
 
-    fetchJourneys();
+    fetchStories();
   }, []);
 
   return (
-    <div className="journeys-section">
-      <h2>📖 Shared Journeys</h2>
-      {journeys.length === 0 ? (
-        <p>No journeys shared yet. Be the first to share your experience!</p>
-      ) : (
-        <div className="journeys-list">
-          {journeys.map((journey) => (
-            <div key={journey.id} className="journey-card">
-              <p>{journey.text}</p>
-              <span className="journey-meta">- {journey.name || "Anonymous"}</span>
+    <div className="read-journeys-section">
+    <div className="read-journeys-container">
+      <h2>📖 Shared Neurodiversity Journeys</h2>
+      <p className="journey-subtitle">Real stories from real people.</p>
+
+      <div className="journey-cards">
+        {stories.length === 0 ? (
+          <p>No journeys shared yet. Be the first one!</p>
+        ) : (
+          stories.map((story) => (
+            <div key={story.id} className="journey-card">
+              <h3>{story.name || "Anonymous"}</h3>
+              <p><strong>Condition:</strong> {story.condition}</p>
+              <p className="story-text">{story.story}</p>
             </div>
-          ))}
-        </div>
-      )}
+          ))
+        )}
+      </div>
     </div>
+    </div>
+
   );
 };
 

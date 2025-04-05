@@ -40,7 +40,7 @@ const Home = () => {
             </p>
             {/* ✅ Fixed Button - Opens Chatbot Page */}
             <Link to="/chatbot-page">
-              <button className="chatbot-button">Chat with Our AI</button>
+              <button className="chatbot-button"></button>
             </Link>
 
             {/* ✅ New Button - Opens Certification Page

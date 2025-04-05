@@ -1278,7 +1278,7 @@ ol {
   font-size: 0.9rem;
   color: #bbbbbb;
 }
-/* 🌟 Dashboard Container */
+/* 🌈 Updated Background Gradient for Consistency */
 .dashboard-container {
   display: flex;
   flex-direction: column;
@@ -1286,135 +1286,152 @@ ol {
   justify-content: flex-start;
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(to right, #ffdde1, #c1f4f8); /* Matching the theme */
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
   padding: 60px 20px;
-  margin-top: 80px; /* Adjusted for navbar */
+  margin-top: 80px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 🎉 Typing Effect for Welcome Message */
+/* ✍️ Typing Welcome Message */
 .dashboard-container h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: bold;
-  color: #000;
+  color: #003366;
   margin-bottom: 40px;
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* 👤 Profile Section */
 .profile-card {
   display: flex;
   align-items: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.13);
   border-radius: 15px;
   padding: 25px;
-  width: 60%;
-  min-width: 320px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  width: 65%;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.01);
 }
 
 /* 🖼️ Profile Image */
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  border: 3px solid #000;
-  margin-right: 20px;
-  margin-left: 200px;
+  border: 3px solid #005c97;
+  margin-right: 25px;
+  margin-left: 50px;
 }
-
 
 /* ℹ️ Profile Details */
 .profile-details {
-  text-align: left;
   flex: 1;
-  margin-left: 100px;
+  margin-left: 60px;
+  color: #333;
 }
 
 .profile-details h2 {
-  font-size: 1.6rem;
-  color: #000;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #005c97;
 }
 
 .profile-details p {
-  font-size: 1rem;
-  color: #444;
-  margin: 5px 0;
+  font-size: 1.05rem;
+  margin: 6px 0;
+  color: #555;
 }
 
-/* 🔹 Dashboard Sections (VERTICAL Cards) */
+/* 📦 Dashboard Sections */
 .dashboard-sections {
   display: flex;
-  flex-direction: column; /* 📌 Vertical Layout */
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  width: 60%;
-  min-width: 320px;
+  gap: 20px;
+  width: 65%;
+  max-width: 800px;
 }
 
-/* 🏆 Themed Cards */
+/* 💳 Dashboard Cards */
 .dashboard-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   width: 100%;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .dashboard-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-card h3 {
-  font-size: 1.3rem;
-  color: #000;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #003366;
+  margin-bottom: 12px;
 }
 
 .dashboard-card p {
-  color: #666;
   font-size: 1rem;
+  color: #555;
+  margin-bottom: 16px;
 }
 
+/* ✨ Buttons */
+.dashboard-card button {
+  padding: 10px 20px;
+  background: #005c97;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
+.dashboard-card button:hover {
+  background: #003f6b;
+}
 
-
-/* 🔹 Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 1024px) {
-  .dashboard-container {
-    padding: 40px 15px;
-  }
-
   .profile-card {
-    width: 80%;
+    width: 85%;
     flex-direction: column;
     text-align: center;
   }
 
   .profile-pic {
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
+  }
+
+  .profile-details {
+    margin-left: 0;
   }
 
   .dashboard-sections {
-    width: 80%;
+    width: 85%;
   }
 }
 
 @media (max-width: 768px) {
-  .dashboard-container {
-    margin-top: 60px;
-    padding: 30px 10px;
-  }
-
   .dashboard-container h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .profile-card {
     width: 90%;
+    padding: 20px;
   }
 
   .dashboard-sections {
@@ -1429,25 +1446,24 @@ ol {
     font-size: 0.95rem;
   }
 
-  .open-report-btn {
-    padding: 10px 15px;
+  .dashboard-card button {
+    padding: 9px 18px;
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .dashboard-container {
-    margin-top: 50px;
-    padding: 20px;
+    padding: 30px 15px;
   }
 
   .dashboard-container h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .profile-card {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
   }
 
   .dashboard-sections {
@@ -1462,12 +1478,25 @@ ol {
     font-size: 0.9rem;
   }
 
-  .open-report-btn {
-    width: 90%;
+  .dashboard-card button {
+    width: 100%;
     font-size: 0.85rem;
-    padding: 8px;
+    padding: 10px;
   }
 }
+
+/* ✨ Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Exercise Page Styling */
 .exercise-section {
@@ -1523,7 +1552,7 @@ ol {
   margin: 50px 50px;
   padding: 20px;
   padding-right: 20px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   text-align: center;
@@ -1549,7 +1578,7 @@ ol {
 .submit-journey-btn {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background: linear-gradient(to right, #667eea, #764ba2);
   color: white;
   border: none;
   border-radius: 5px;
@@ -1782,7 +1811,7 @@ ol {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #333;
+  color: #b5b1b1;
 }
 
 .input-area button {
@@ -1801,4 +1830,60 @@ ol {
     width: 90%;
     right: 5%;
   }
+}
+
+.read-journeys-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 20px;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
+}
+
+.read-journeys-container {
+  margin-top: 80px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  }  
+
+.journey-subtitle {
+  margin-bottom: 30px;
+  color: #777;
+  font-size: 16px;
+}
+
+.journey-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.journey-card {
+  width: 90%;
+  max-width: 600px;
+  background-color: #f7fdfc;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 6px solid #7ac9c6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.journey-card h3 {
+  margin-bottom: 5px;
+}
+
+.story-text {
+  margin-top: 10px;
+  color: #444;
+  line-height: 1.5;
 }

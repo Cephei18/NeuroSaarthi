@@ -22,6 +22,9 @@ import Reports from "./components/Reports";
 import Exercise from "./components/Exercise";
 import ShareJourney from "./components/ShareJourney";
 import ReadJourneys from "./components/ReadJourneys";
+import ChatbotTab from "./components/ChatbotTab";
+import AffiliationTab from "./components/AffiliationTab"; // Import AffiliationTab component
+import GetAffiliation from "./components/GetAffiliation"; // Import GetAffiliation component    
 
 import "./App.css"; // Import CSS for styling
 
@@ -50,6 +53,10 @@ const App = () => {
         <Route path="/exercise" element={user ? <Exercise /> : <Navigate to="/login" />} /> {/* Protected route */}
         <Route path="/share-journey" element={<ShareJourney />} />
         <Route path="/read-journeys" element={<ReadJourneys />} /> {/* Public route */}
+        <Route path="/chatbot-tab" element={<ChatbotTab />} /> {/* Public route */}
+        <Route path="/affiliation-tab" element={<AffiliationTab />} /> {/* Public route */}
+        <Route path="/get-affiliation" element={<GetAffiliation />} /> {/* Public route */}
+       
         
         {/* Redirect to home if no match */}
       </Routes>

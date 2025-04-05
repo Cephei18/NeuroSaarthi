@@ -57,6 +57,14 @@ const Dashboard = () => {
 
       {/* Cards Section */}
       <div className="dashboard-sections">
+      <div className="dashboard-card">
+         <h3>💬 AI Chatbot</h3>
+         <p>Ask questions, get support, and explore neurodiversity with our AI guide.</p>
+         <button className="open-chatbotab-btn" onClick={() => navigate("/chatbot-tab")}>
+            Chat with Us
+          </button>
+      </div>
+
         <div className="dashboard-card">
           <h3>📊 Personalized Reports</h3>
           <p>View AI-generated insights based on your experience.</p>

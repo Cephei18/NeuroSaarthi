@@ -1,45 +1,92 @@
-.exercise-text {
-    font-size: 1rem;
-    color: #ece2e2;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    white-space: pre-wrap;
+/* Container for the whole exercise section */
+.exercise-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 80px;
+}
+
+/* Glass-style card container */
+.exercise-container {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.exercise-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* The box showing the exercise */
+.exercise-box {
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  min-height: 150px;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Markdown inside exercise text */
+.exercise-text p,
+.exercise-text h2,
+.exercise-text h3 {
+  margin: 10px 0;
+}
+
+/* Loading text */
+.loading-text {
+  font-style: italic;
+  color: #666;
+}
+
+/* Button Styling */
+.exercise-btn {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.exercise-btn:hover {
+  background: linear-gradient(to right, #5a67d8, #6b46c1);
+  transform: translateY(-2px);
+}
+
+.exercise-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .exercise-container {
+    padding: 20px;
   }
-  
-  .exercise-text h1,
-  .exercise-text h2,
-  .exercise-text h3 {
-    color: #caacac;
-    margin-top: 1.5rem;
-    font-weight: bold;
+
+  .exercise-box {
+    font-size: 0.95rem;
   }
-  
-  .exercise-text ul {
-    margin-left: 20px;
-    list-style-type: disc;
-  }
-  
-  .exercise-text ol {
-    margin-left: 20px;
-    list-style-type: decimal;
-  }
-  
-  .exercise-text li {
-    margin-bottom: 8px;
-  }
-  
-  .exercise-text blockquote {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-left: 4px solid #ccc;
-    margin: 1rem 0;
-  }
-  
-  .exercise-text strong {
-    font-weight: bold;
-  }
-  
-  .exercise-text em {
-    font-style: italic;
-  }
-  
+}

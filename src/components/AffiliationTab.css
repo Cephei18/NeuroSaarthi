@@ -1,0 +1,76 @@
+
+    /* AffiliationTab.css */
+    .affiliation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        width: 100vw;
+        margin-top: 80px;
+    }
+
+.affiliation-tab {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    font-family: "Segoe UI", sans-serif;
+    color: #2c3e50;
+    /* width: 100vw; */
+  }
+  
+  .affiliation-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .affiliation-section {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .affiliation-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #34495e;
+  }
+  
+  .affiliation-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .apply-box {
+    text-align: center;
+  }
+  
+  .apply-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .apply-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .map-placeholder {
+    height: 300px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 18px;
+    color: #666;
+  }
+  
