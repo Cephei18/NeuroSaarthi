@@ -23,6 +23,7 @@ const Reports = () => {
   }, []);
 
   return (
+    <div className="report-section">
     <div className="report-container">
       <h2>Your Personalized Reports</h2>
       <p className="subtitle">AI-generated insights based on your activities.</p>
@@ -41,6 +42,7 @@ const Reports = () => {
       <button className="back-button" onClick={() => navigate("/dashboard")}>
         ⬅ Back to Dashboard
       </button>
+    </div>
     </div>
   );
 };
