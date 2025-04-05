@@ -1,0 +1,45 @@
+.exercise-text {
+    font-size: 1rem;
+    color: #ece2e2;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    white-space: pre-wrap;
+  }
+  
+  .exercise-text h1,
+  .exercise-text h2,
+  .exercise-text h3 {
+    color: #caacac;
+    margin-top: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .exercise-text ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .exercise-text ol {
+    margin-left: 20px;
+    list-style-type: decimal;
+  }
+  
+  .exercise-text li {
+    margin-bottom: 8px;
+  }
+  
+  .exercise-text blockquote {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #ccc;
+    margin: 1rem 0;
+  }
+  
+  .exercise-text strong {
+    font-weight: bold;
+  }
+  
+  .exercise-text em {
+    font-style: italic;
+  }
+  

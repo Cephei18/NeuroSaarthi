@@ -29,10 +29,10 @@
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize the AI instance with your API Key
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+// Initialize Gemini
+const ai = new GoogleGenAI({ apiKey: API_KEY });
 
-// Function to interact with the Gemini API and get a response
+// 1. Existing Report Function
 export async function getAIResponse(userLog) {
   if (!ai) {
     console.error("AI instance not initialized!");
@@ -54,16 +54,40 @@ Format the response with these sections:
 
 Here's the user's log data:`;
 
-    // Generate content using the prompt and userLog
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: `${prompt}\n${JSON.stringify(userLog)}`,
     });
 
-    // Return the generated text from the response
     return response.text;
   } catch (error) {
     console.error("Error fetching Gemini API:", error.message);
     return { error: "Failed to fetch AI response" };
   }
 }
+
+// 2. NEW Focus Activity Generator Function
+export async function getFocusExercise() {
+  if (!ai) {
+    console.error("AI instance not initialized!");
+    return;
+  }
+
+  try {
+    const prompt = `
+Generate a soothing and engaging focus-enhancing exercise for neurodiverse individuals (ADHD, autism, dyslexia). 
+Include a simple task they can perform, such as a breathing exercise, a short puzzle, or a movement activity. 
+If it involves a physical action, suggest a timer duration. Keep it easy to follow and calming.`;
+
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: prompt,
+    });
+
+    return response.text;
+  } catch (error) {
+    console.error("Error fetching focus exercise:", error.message);
+    return { error: "Failed to fetch focus exercise" };
+  }
+}
+
