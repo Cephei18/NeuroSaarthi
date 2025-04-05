@@ -25,6 +25,7 @@ import ReadJourneys from "./components/ReadJourneys";
 import ChatbotTab from "./components/ChatbotTab";
 import AffiliationTab from "./components/AffiliationTab"; // Import AffiliationTab component
 import GetAffiliation from "./components/GetAffiliation"; // Import GetAffiliation component    
+import RecommendedMedia from "./components/RecommendedMedia";
 
 import "./App.css"; // Import CSS for styling
 
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="/chatbot-tab" element={<ChatbotTab />} /> {/* Public route */}
         <Route path="/affiliation-tab" element={<AffiliationTab />} /> {/* Public route */}
         <Route path="/get-affiliation" element={<GetAffiliation />} /> {/* Public route */}
+        <Route path="/recommended-media" element={<RecommendedMedia />} /> {/* Public route */}
        
         
         {/* Redirect to home if no match */}

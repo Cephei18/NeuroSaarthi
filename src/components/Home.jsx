@@ -8,7 +8,7 @@ import Neurodiversity from "./Neurodiversity";
 import FocusExtension from "./FocusExtension";
 import SuccessStories from "./SuccessStories";
 import Chatbot from "./Chatbot";  // ✅ Import Floating Chatbot
-
+import RecommendedMedia from "./RecommendedMedia";
 
 
 const images = [bg1, bg2, bg3];
@@ -35,8 +35,11 @@ const Home = () => {
           <div className="overlay">
             <h1 className="app-title">NeuroSaarthi</h1>
             <p className="app-description">
-              Explore Neurodiversity through Augmented Reality.  
-              Learn, experience, and empathize like never before.
+              <h4>"Be the Guide Every Neurodiverse Child Deserves"</h4>
+              NeuroSaarthi helps you discover how neurodiverse children see, hear, and feel the world.
+              Learn, adapt, and make a real difference in your school, home, and community.
+
+
             </p>
             {/* ✅ Fixed Button - Opens Chatbot Page */}
             <Link to="/chatbot-page">
@@ -71,6 +74,10 @@ const Home = () => {
       {/* ✅ Floating Chatbot (Visible on All Pages) */}
       <Chatbot />
 
+      {/* 🔹 Recommended Media Section */}
+      <section className="recommended-media">
+        <RecommendedMedia />
+      </section>
 
     </main>
   );
