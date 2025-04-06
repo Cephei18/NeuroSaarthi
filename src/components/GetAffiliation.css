@@ -74,4 +74,54 @@
   .submit-btn:hover {
     background-color: #3e8e41;
   }
-  
+  /* Tablets */
+@media (max-width: 1024px) {
+  .get-affiliation-form-container {
+    margin: 80px 20px 0;
+    padding: 25px;
+  }
+
+  .get-affiliation-section {
+    padding: 20px;
+  }
+
+  .get-affiliation-section h2 {
+    font-size: 20px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .get-affiliation-form-container {
+    margin: 60px 15px 0;
+    padding: 20px;
+  }
+
+  .get-affiliation-form-container h2 {
+    font-size: 20px;
+  }
+
+  .get-affiliation-form-container input,
+  .get-affiliation-form-container select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .get-affiliation-section {
+    padding: 15px;
+  }
+
+  .get-affiliation-section h2 {
+    font-size: 18px;
+  }
+
+  .checklist-label,
+  .proof-label {
+    font-size: 14px;
+  }
+}

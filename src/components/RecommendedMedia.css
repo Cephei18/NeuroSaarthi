@@ -79,4 +79,28 @@
   .trailer-button:hover {
     background-color: #4b3f72;
   }
-  
+   
+ 
+
+
+  @media screen {
+    .recommended-media-section {
+        padding: 2rem;
+    }
+    .media-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .movie-title {
+        font-size: 1.8rem;
+    }
+    .movie-subtitle {
+        font-size: 1rem;
+    }
+    .description {
+        font-size: 0.85rem;
+    }
+    .tags {
+        font-size: 0.8rem;
+    }
+  }

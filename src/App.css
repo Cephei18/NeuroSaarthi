@@ -21,7 +21,7 @@ html, body {
 
 
 .home {
-  background:  #ffdde1;
+  background: linear-gradient(to right, #ffdde1, #c1f4f8);
   max-width: 100vw;
   height: 100vh;
   display: flex;
@@ -64,6 +64,12 @@ html, body {
   margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.5rem; /* Slightly smaller title for mobile */
+  }
+}
+
 /* Description */
 .app-description {
   font-size: 1.2rem;
@@ -88,94 +94,6 @@ html, body {
 
 
 /* RESPONSIVENESS */
-/* Navbar Styling */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3f7073;
-  padding: 15px 30px;
-  color: white;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
-/* Logo */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Navigation Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding-right: 7ch;
-}
-
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #e89fe9;
-}
-
-/* Hamburger Menu for Small Screens */
-.menu-icon {
-  display: none; /* Hidden by default */
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 15px;
-  }
-
-  .menu-icon {
-    display: block; /* Show menu icon on small screens */
-  }
-
-  .nav-links {
-    display: none; /* Hide links by default */
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #3f7073;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .nav-links.show {
-    display: flex; /* Show links when menu is clicked */
-  }
-
-  .nav-links li {
-    display: block;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-    padding: 10px;
-    display: block;
-  }
-}
 
 
 .experience-container {
@@ -188,6 +106,7 @@ html, body {
   font-size: 1.5rem;
   
 }
+
 
 .cards-container {
   display: flex;
@@ -245,6 +164,10 @@ html, body {
     flex-direction: column; /* Stack cards vertically */
     align-items: center;
     gap: 40px;
+  }
+
+  h2 {
+    font-size: 1.8rem; /* Smaller heading for mobile */
   }
   .experience-container {
     padding-top: 70px; /* Adjust padding for smaller screens */
@@ -999,10 +922,12 @@ ol {
 
 @media (max-width: 480px) {
   .focus-extension-container {
-    width: 100vw;
+    width: 80vw;
+    height: 750px;
     margin-top: 80px;
     padding: 15px;
   }
+  
 
   .focus-header {
     font-size: 1.6rem;
@@ -1030,6 +955,11 @@ ol {
   .focus-steps li {
     font-size: 0.95rem;
     padding: 8px;
+  }
+
+  ol{
+    padding-left: 20px;
+    
   }
 }
 /* 🔹 Login Container */
@@ -1889,4 +1819,131 @@ ol {
   margin-top: 10px;
   color: #444;
   line-height: 1.5;
+}
+
+/* ✅ Responsive Design */
+
+@media (max-width: 768px) {
+  .read-journeys-container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .journey-subtitle {
+    font-size: 16px;
+  }
+
+  .journey-card {
+    padding: 16px;
+  }
+
+  .journey-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .story-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .read-journeys-container {
+    margin-top: 60px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .journey-subtitle {
+    font-size: 15px;
+  }
+
+  .journey-card {
+    padding: 14px;
+  }
+
+  .journey-card h3 {
+    font-size: 1rem;
+  }
+
+  .story-text {
+    font-size: 0.9rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3f7073;
+  padding: 15px 30px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f5ffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a, .nav-links button {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+  color: #00e6e6;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    background: #3f7073;
+    width: 100%;
+    display: none;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
 }

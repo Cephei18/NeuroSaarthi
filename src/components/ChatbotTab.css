@@ -113,3 +113,70 @@
     background-color: #5a4db1;
   }
   
+/* Tablets */
+@media (max-width: 1024px) {
+  .chatbot-tab-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .chatbot-tab-header {
+    font-size: 1.75rem;
+  }
+
+  .role-selector select {
+    font-size: 15px;
+  }
+
+  .input-area button {
+    padding: 10px 16px;
+  }
+
+  .chat-window {
+    height: 350px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .chatbot-tab-header {
+    font-size: 1.5rem;
+  }
+
+  .chatbot-tab-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .role-selector {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .role-selector select {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .chat-window {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .input-area {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-area input,
+  .input-area button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -137,15 +137,66 @@
   color: #4a3b6f;
 }
 
+/* ✅ Responsive tweaks for tablets and phones */
 
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .report-container {
     padding: 20px;
   }
 
+  .report-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .report-btn,
+  .back-button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
   .report-box {
     font-size: 0.95rem;
   }
+
+  .chart-section {
+    padding: 16px;
+  }
 }
+
+@media (max-width: 480px) {
+  .report-container {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .report-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .report-box {
+    font-size: 0.9rem;
+    padding: 16px;
+  }
+
+  .chart-section {
+    padding: 14px;
+    margin-top: 20px;
+  }
+
+  .report-btn,
+  .back-button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .history-button {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+

@@ -45,4 +45,30 @@
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  
+  /* ✅ Responsive styles */
+@media (max-width: 768px) {
+  .guide-modal {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .guide-step {
+    font-size: 14px;
+  }
+
+  .guide-button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-modal {
+    padding: 16px;
+  }
+
+  .guide-button {
+    width: 100%;
+    text-align: center;
+  }
+}
