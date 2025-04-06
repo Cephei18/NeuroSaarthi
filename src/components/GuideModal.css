@@ -1,0 +1,48 @@
+/* GuideModal wrapper styling */
+.guide-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Guide modal base */
+  .guide-modal {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 600px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  /* Step styles */
+  .guide-step {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Buttons */
+  .guide-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+  
+  .guide-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Simple fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
